@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sw_vers -productVersion)",
+      "Bash(echo \"macOS: $\\(sw_vers -productVersion\\)\")",
+      "Bash(sips --formats)",
+      "Bash(sips -Z 1920 -s format webp -s formatOptions 80 saya_website_layouts/background_hero_saya.jpg --out img/hero.webp)",
+      "Bash(sips -Z 1920 -s formatOptions 80 saya_website_layouts/background_hero_saya.jpg --out img/hero.jpg)",
+      "Bash(sips -Z 900 -s format webp -s formatOptions 78 \"saya_website_layouts/DSCF4932.jpg\" --out \"img/card-dmk.webp\")",
+      "Bash(sips -Z 900 -s formatOptions 75 \"saya_website_layouts/DSCF4932.jpg\" --out \"img/card-dmk.jpg\")",
+      "Bash(sips -Z 900 -s format webp -s formatOptions 78 \"saya_website_layouts/IMG_0707.JPG\" --out \"img/card-massage.webp\")",
+      "Bash(sips -Z 900 -s formatOptions 75 \"saya_website_layouts/IMG_0707.JPG\" --out \"img/card-massage.jpg\")",
+      "Bash(sips -s format webp -s formatOptions 80 \"saya_website_layouts/IMG_5276.JPG\" --out \"img/card-restore.webp\")",
+      "Bash(sips -s format webp -s formatOptions 82 \"saya_website_layouts/bc799da92cc5abf024e644067e9b2652.jpg\" --out \"img/banner.webp\")",
+      "Bash(sips -Z 1200 -s format webp -s formatOptions 80 \"saya_website_layouts/IMG_1264 2.jpg\" --out \"img/enzyme.webp\")",
+      "Bash(sips -Z 1200 -s formatOptions 78 \"saya_website_layouts/IMG_1264 2.jpg\" --out \"img/enzyme.jpg\")",
+      "Bash(sips -s format webp /Users/serhiioleskiv/vscodeprojects/saya_project/img/card-scan.jpg --out /Users/serhiioleskiv/vscodeprojects/saya_project/img/test.webp)",
+      "Bash(sips --getProperty format img/test.webp)",
+      "Bash(sips -s format webp img/hero.jpg     --out img/hero.webp)",
+      "Bash(sips -s format webp img/card-dmk.jpg    --out img/card-dmk.webp)",
+      "Bash(sips -s format webp img/card-massage.jpg --out img/card-massage.webp)",
+      "Bash(sips -s format webp img/card-restore.jpg --out img/card-restore.webp)",
+      "Bash(git --version)"
+    ]
+  }
+}

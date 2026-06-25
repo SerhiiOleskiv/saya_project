@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saya Holistic Spa — Medical-Grade Facials & Therapeutic Massage</title>
+  <meta name="description" content="Saya Holistic Spa specialises in DMK methodology, medical-grade facials, therapeutic massage, Celluma LED therapy and advanced skin analysis. Book your transformation today.">
+
+  <style>
+    /* ==================== RESET & BASE ==================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --brand:       #2c2c2c;
+      --white:       #ffffff;
+      --off-white:   #f7f6f3;
+      --light-gray:  #e5e3de;
+      --mid-gray:    #9b9890;
+      --serif:       Helvetica, 'Helvetica Neue', Arial, sans-serif;
+      --sans:        Helvetica, 'Helvetica Neue', Arial, sans-serif;
+      --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--brand);
+      background: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ==================== NAVIGATION ==================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 900;
+      height: 72px;
+      padding: 0 44px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      transition: background 0.5s var(--ease-out), border-color 0.5s;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.solid {
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-color: var(--light-gray);
+    }
+
+    /* left links */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-left a {
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: opacity 0.3s, color 0.4s;
+      white-space: nowrap;
+    }
+    .nav-left a:hover { opacity: 0.55; }
+    .nav.solid .nav-left a { color: var(--brand); }
+
+    /* center logo */
+    .nav-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.14em;
+      color: var(--white);
+      line-height: 1;
+      transition: color 0.4s;
+    }
+    .nav-logo-sub {
+      font-size: 0.46rem;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 3px;
+      transition: color 0.4s;
+      white-space: nowrap;
+    }
+    .nav.solid .nav-logo { color: var(--brand); }
+    .nav.solid .nav-logo-sub { color: var(--mid-gray); }
+
+    /* right links */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-right a {
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: opacity 0.3s, color 0.4s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover { opacity: 0.55; }
+    .nav.solid .nav-right a { color: var(--brand); }
+
+    .nav-book {
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 8px 20px;
+      transition: color 0.4s, border-color 0.4s, background 0.3s !important;
+    }
+    .nav-book:hover { background: var(--white) !important; color: var(--brand) !important; opacity: 1 !important; }
+    .nav.solid .nav-book { border-color: var(--brand); }
+    .nav.solid .nav-book:hover { background: var(--brand) !important; color: var(--white) !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--white);
+      transition: background 0.4s, transform 0.3s, opacity 0.3s;
+    }
+    .nav.solid .hamburger span { background: var(--brand); }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* hide hamburger li by default */
+    .nav-right .hamburger-li { display: none; }
+
+    /* mobile menu */
+    .mobile-nav {
+      position: fixed;
+      top: 70px; left: 0;
+      width: 100%;
+      background: var(--white);
+      padding: 0 30px;
+      max-height: 0;
+      overflow: hidden;
+      z-index: 899;
+      transition: max-height 0.4s var(--ease-out), padding 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .mobile-nav.open {
+      max-height: 380px;
+      padding: 24px 30px 32px;
+      border-color: var(--light-gray);
+    }
+    .mobile-nav a {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--light-gray);
+      transition: opacity 0.2s;
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { opacity: 0.5; }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background: url('saya_website_layouts/background_hero_saya.jpg') center center / cover no-repeat;
+      transform: scale(1.06);
+      transition: transform 1.4s var(--ease-out);
+      filter: brightness(0.65);
+    }
+    .hero-img.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(44,44,44,0.05) 0%,
+        rgba(44,44,44,0.5) 100%
+      );
+    }
+
+    /* tagline — vertically centered, horizontally centered */
+    .hero-body {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      padding: 0 56px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.8vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.3;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s ease 0.25s, transform 0.9s ease 0.25s;
+    }
+    .hero-headline.in { opacity: 1; transform: none; }
+
+    /* CTA — pinned to bottom-right corner */
+    .hero-cta {
+      position: absolute;
+      z-index: 2;
+      bottom: 52px;
+      right: 56px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 13px 26px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+    }
+    .hero-cta.in {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s,
+                  background 0.3s, color 0.3s, border-color 0.3s, gap 0.3s;
+    }
+    .hero-cta:hover { background: var(--white); color: var(--brand); gap: 20px; }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 56px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.48rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      writing-mode: vertical-rl;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 52px;
+      background: rgba(255,255,255,0.3);
+      transform-origin: top;
+      animation: lineDown 2.2s ease-in-out infinite;
+    }
+    @keyframes lineDown {
+      0%   { transform: scaleY(0); opacity: 0; }
+      40%  { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1); opacity: 0; }
+    }
+
+    /* ==================== SERVICES GRID ==================== */
+    .services {
+      padding: 90px 40px 100px;
+      background: var(--white);
+    }
+
+    .services-top {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 44px;
+    }
+    .subtle-link {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: gap 0.3s;
+    }
+    .subtle-link:hover { gap: 16px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .svc-card {
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .svc-img-wrap {
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .svc-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(15%);
+      transition: transform 0.8s var(--ease-out), filter 0.5s;
+    }
+    .svc-card:hover .svc-img-wrap img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+
+    .svc-label {
+      padding: 18px 4px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .svc-label .arrow {
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s, transform 0.3s;
+      font-size: 0.9rem;
+    }
+    .svc-card:hover .svc-label .arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ==================== DMK BANNER ==================== */
+    .dmk-banner {
+      position: relative;
+      height: 72vh;
+      min-height: 440px;
+      overflow: hidden;
+    }
+    .dmk-banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url('saya_website_layouts/IMG_1264 2.jpg') center 35% / cover no-repeat;
+      filter: brightness(0.4);
+      transform: scale(1.02);
+      transition: transform 0.8s;
+    }
+    .dmk-banner:hover .dmk-banner-bg { transform: scale(1); }
+
+    .dmk-banner-body {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 40px;
+    }
+
+    .dmk-banner-inner { max-width: 820px; }
+
+    .dmk-eyebrow {
+      font-size: 0.58rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+    }
+
+    .dmk-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .dmk-headline em { font-style: italic; }
+
+    .dmk-sub {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.9;
+    }
+
+    /* ==================== ABOUT DMK ==================== */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+    }
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      padding: 100px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 22px;
+    }
+
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    .sec-body {
+      font-size: 0.78rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: #5a5856;
+      margin-bottom: 18px;
+    }
+
+    .text-cta {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-decoration: none;
+      border-bottom: 1px solid var(--brand);
+      padding-bottom: 3px;
+      transition: gap 0.3s, opacity 0.3s;
+    }
+    .text-cta:hover { gap: 16px; opacity: 0.6; }
+
+    /* ==================== TREATMENT MENU ==================== */
+    .treatments {
+      padding: 110px 40px 120px;
+      background: var(--off-white);
+    }
+
+    .treatments-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-bottom: 1px solid var(--light-gray);
+      margin-bottom: 56px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs-bar::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      padding: 14px 26px;
+      cursor: pointer;
+      position: relative;
+      white-space: nowrap;
+      transition: color 0.3s;
+      flex-shrink: 0;
+    }
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 1px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transition: transform 0.35s var(--ease-out);
+    }
+    .tab-btn.active { color: var(--brand); }
+    .tab-btn.active::after { transform: scaleX(1); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid var(--light-gray);
+    }
+
+    .t-list { border-right: 1px solid var(--light-gray); }
+
+    .t-item {
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .t-item:last-child { border-bottom: none; }
+
+    .t-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 28px;
+      font-family: var(--sans);
+      font-size: 0.63rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s;
+    }
+    .t-btn .ch {
+      font-size: 1rem;
+      font-weight: 200;
+      transition: transform 0.35s var(--ease-out);
+      line-height: 1;
+    }
+    .t-btn:hover,
+    .t-btn.active { background: rgba(44,44,44,0.04); }
+    .t-btn.active .ch { transform: rotate(90deg); }
+
+    .t-detail {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 48px;
+      background: var(--white);
+      min-height: 260px;
+    }
+    .t-detail.active { display: flex; }
+
+    .t-detail-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .t-detail-desc {
+      font-size: 0.75rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: #5c5a58;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .t-detail-meta {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--mid-gray);
+      margin-bottom: 28px;
+    }
+
+    .t-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-decoration: none;
+      transition: gap 0.3s;
+    }
+    .t-book:hover { gap: 16px; }
+
+    /* ==================== PROCESS ==================== */
+    .process {
+      padding: 120px 40px;
+      background: var(--white);
+    }
+
+    .process-head {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 70px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .process-step { text-align: center; }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .step-text {
+      font-size: 0.76rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #636160;
+    }
+
+    /* ==================== CONSULTATION ==================== */
+    .consult {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--off-white);
+    }
+
+    .consult-content {
+      padding: 100px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .consult-list {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .consult-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .consult-item:first-child { border-top: 1px solid var(--light-gray); }
+
+    .consult-item-title {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .consult-item-text {
+      font-size: 0.76rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #616060;
+    }
+
+    .consult-img {
+      overflow: hidden;
+      min-height: 600px;
+    }
+    .consult-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ==================== PHILOSOPHY ==================== */
+    .philosophy {
+      padding: 130px 40px;
+      background: var(--brand);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .philosophy::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.025) 0%, transparent 70%);
+    }
+
+    .phil-eyebrow {
+      font-size: 0.58rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 36px;
+    }
+
+    .phil-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.55;
+      max-width: 780px;
+      margin: 0 auto 60px;
+    }
+
+    .phil-pillars {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      flex-wrap: wrap;
+    }
+
+    .pillar span {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 10px;
+    }
+    .pillar-rule {
+      width: 28px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+      margin: 0 auto;
+    }
+
+    /* ==================== TESTIMONIALS ==================== */
+    .testimonials {
+      padding: 120px 40px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .testimonials-head { margin-bottom: 70px; }
+
+    .testi-track {
+      max-width: 760px;
+      margin: 0 auto;
+      min-height: 200px;
+      position: relative;
+    }
+
+    .testi-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeSlide 0.6s var(--ease-out);
+    }
+    .testi-slide.active { display: flex; }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .testi-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--brand);
+      margin-bottom: 28px;
+    }
+
+    .testi-author {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    .testi-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 52px;
+    }
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dot.active { background: var(--brand); transform: scale(1.4); }
+
+    /* ==================== BOOKING CTA ==================== */
+    .booking {
+      padding: 140px 40px;
+      background: var(--off-white);
+      text-align: center;
+    }
+
+    .booking-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 18px;
+    }
+
+    .booking-sub {
+      font-size: 0.78rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #777572;
+      margin-bottom: 50px;
+    }
+
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.63rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      background: var(--brand);
+      padding: 18px 42px;
+      transition: background 0.3s, gap 0.3s;
+    }
+    .book-btn:hover { background: #3e3e3e; gap: 20px; }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: var(--brand);
+      padding: 72px 60px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand-logo {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.7rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-col-head {
+      font-size: 0.54rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      font-size: 0.73rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.58);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.6rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 22px;
+    }
+    .footer-social a {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-social a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ==================== SCROLL ANIMATIONS ==================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal.d1 { transition-delay: 0.1s; }
+    .reveal.d2 { transition-delay: 0.2s; }
+    .reveal.d3 { transition-delay: 0.3s; }
+    .reveal.d4 { transition-delay: 0.4s; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1200px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-content { padding: 70px 50px; }
+      .consult-content { padding: 70px 50px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 50px; }
+      /* hide left/right text links, show hamburger */
+      .nav-left li:not(.hamburger-li) { display: none; }
+      .nav-right li:not(.hamburger-li) { display: none; }
+      .nav-right .hamburger-li { display: flex; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .hero-body { padding: 0 28px; }
+      .hero-cta { right: 28px; bottom: 40px; }
+      .hero-scroll { display: none; }
+
+      .hero-body { padding: 0 28px 72px; }
+      .hero-scroll { right: 28px; }
+
+      .services { padding: 60px 20px 70px; }
+
+      .about { grid-template-columns: 1fr; }
+      .about-img { min-height: 340px; }
+      .about-content { padding: 56px 28px; }
+
+      .treatments { padding: 80px 20px; }
+      .tab-panel.active { grid-template-columns: 1fr; }
+      .t-list { border-right: none; border-bottom: 1px solid var(--light-gray); }
+      .t-detail { padding: 34px 28px; }
+
+      .process-grid { grid-template-columns: 1fr; gap: 50px; max-width: 480px; }
+
+      .consult { grid-template-columns: 1fr; }
+      .consult-img { min-height: 340px; order: -1; }
+      .consult-content { padding: 60px 28px; }
+
+      .phil-pillars { gap: 44px; }
+
+      .testimonials { padding: 90px 28px; }
+
+      .booking { padding: 100px 28px; }
+
+      footer { padding: 60px 28px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; padding-bottom: 40px; }
+      .footer-bottom { flex-direction: column; gap: 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="nav">
+  <!-- Left -->
+  <ul class="nav-left">
+    <li><a href="#about">The Spa Experience</a></li>
+    <li><a href="#treatments">Rituals &amp; Treatments</a></li>
+  </ul>
+
+  <!-- Center logo -->
+  <a href="#home" class="nav-logo-wrap">
+    <span class="nav-logo">saya</span>
+    <span class="nav-logo-sub">holistic spa &nbsp;·&nbsp; new york</span>
+  </a>
+
+  <!-- Right -->
+  <ul class="nav-right">
+    <li><a href="#testimonials">Results &amp; Stories</a></li>
+    <li><a href="#booking" class="nav-book">Book Now</a></li>
+    <li class="hamburger-li">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about"         onclick="closeMobile()">The Spa Experience</a>
+  <a href="#treatments"    onclick="closeMobile()">Rituals &amp; Treatments</a>
+  <a href="#consult"       onclick="closeMobile()">Skin Consultation</a>
+  <a href="#testimonials"  onclick="closeMobile()">Results &amp; Stories</a>
+  <a href="#booking"       onclick="closeMobile()">Book Now →</a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-img" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Tagline — vertically centered, left side -->
+  <div class="hero-body">
+    <h1 class="hero-headline" id="heroH1">
+      Transformative Experience.<br>Rejuvenating Touch.
+    </h1>
+  </div>
+
+  <!-- CTA — bottom right -->
+  <a href="#booking" class="hero-cta" id="heroCta">
+    Start Your Journey &nbsp;→
+  </a>
+
+  <!-- Scroll indicator — bottom left -->
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ========== SERVICES GRID ========== -->
+<section class="services" id="about">
+  <div class="services-top">
+    <a href="#booking" class="subtle-link">Book Now &nbsp;→</a>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-img-wrap">
+        <img src="saya_website_layouts/DSCF4932.jpg" alt="DMK Skin Revision" loading="lazy">
+      </div>
+      <div class="svc-label">
+        <span>DMK Skin Revision</span>
+        <span class="arrow">→</span>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d1">
+      <div class="svc-img-wrap">
+        <img src="saya_website_layouts/IMG_0707.JPG" alt="Saya Signature Face Massage" loading="lazy">
+      </div>
+      <div class="svc-label">
+        <span>Saya Signature Face Massage</span>
+        <span class="arrow">→</span>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d2">
+      <div class="svc-img-wrap">
+        <img src="saya_website_layouts/IMG_5276.JPG" alt="JR Release, Rebalance & Restore" loading="lazy">
+      </div>
+      <div class="svc-label">
+        <span>JR Release &amp; Restore Therapy</span>
+        <span class="arrow">→</span>
+      </div>
+    </div>
+
+    <div class="svc-card reveal d3">
+      <div class="svc-img-wrap">
+        <img src="saya_website_layouts/006d734c934990e03fd5b2edd8f5e1ce.jpg" alt="Advanced Skin Scan" loading="lazy">
+      </div>
+      <div class="svc-label">
+        <span>Advanced Skin Scan</span>
+        <span class="arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DMK METHODOLOGY BANNER ========== -->
+<section class="dmk-banner">
+  <div class="dmk-banner-bg"></div>
+  <div class="dmk-banner-body">
+    <div class="dmk-banner-inner reveal">
+      <p class="dmk-eyebrow">Our Methodology</p>
+      <h2 class="dmk-headline">
+        With DMK's unique approach of<br>
+        <em>Remove, Rebuild, Protect,</em> and <em>Maintain</em>,<br>
+        our therapists deliver long-lasting, visible results.
+      </h2>
+      <p class="dmk-sub">Every treatment is clinically designed, results-driven, and tailored exclusively to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT — WHAT IS ENZYME THERAPY ========== -->
+<section class="about">
+  <div class="about-img">
+    <img src="saya_website_layouts/IMG_1264 2.jpg" alt="DMK Enzyme Therapy being applied" loading="lazy">
+  </div>
+  <div class="about-content reveal">
+    <p class="eyebrow">What Is Enzyme Therapy</p>
+    <h2 class="sec-title">The Science of Skin<br>at Its Finest</h2>
+    <p class="sec-body">
+      DMK's famous Enzyme Therapy and skin health revision will give you instant plumping — oxygenating, detoxifying, and energising your skin, using your lymphatic system. This unique treatment brings fresh blood throughout your skin, kick-starting its optimal functioning for long-term results.
+    </p>
+    <p class="sec-body">
+      This facial treatment is paramedical: focused on achieving specific, measurable results rather than designed for relaxation alone. Includes deep cleanse, Enzyme Therapy, and Transepidermal Infusion.
+    </p>
+    <a href="#treatments" class="text-cta">Explore Treatments →</a>
+  </div>
+</section>
+
+<!-- ========== TREATMENT MENU ========== -->
+<section class="treatments" id="treatments">
+  <div class="treatments-head reveal">
+    <p class="eyebrow" style="text-align:center;">Rituals &amp; Treatments</p>
+    <h2 class="sec-title" style="text-align:center;">DMK Skin Revision</h2>
+  </div>
+
+  <div class="tabs-bar">
+    <button class="tab-btn active" data-tab="dmk">Signature DMK Facials</button>
+    <button class="tab-btn" data-tab="massage">Holistic Massage</button>
+    <button class="tab-btn" data-tab="led">Celluma LED Therapy</button>
+    <button class="tab-btn" data-tab="scan">Advanced Skin Analysis</button>
+    <button class="tab-btn" data-tab="rituals">Body Rituals</button>
+  </div>
+
+  <!-- DMK Facials -->
+  <div class="tab-panel active" id="tab-dmk">
+    <div class="t-list">
+      <div class="t-item">
+        <button class="t-btn active" data-detail="enzyme">DMK Biochaking Enzyme Therapy <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="lymph">DMK Lymphatic Detox Enzyme Therapy <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="lift">Age-Defying &amp; Lifting Facial <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="glow">Brightening &amp; Glow Therapy <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="acne">Detoxifying &amp; Acne Control <span class="ch">›</span></button>
+      </div>
+    </div>
+
+    <div class="t-detail active" id="detail-enzyme">
+      <div>
+        <h3 class="t-detail-title">DMK Biochaking<br>Enzyme Therapy</h3>
+        <p class="t-detail-desc">Detox, strengthen &amp; glow. A revolutionary oxygenating treatment that boosts circulation, firms the skin, and enhances radiance. DMK's signature enzyme masque works with your body's own chemistry to create real, lasting change at a cellular level.</p>
+        <p class="t-detail-meta">Suitable for all skin types &nbsp;·&nbsp; 75 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-lymph">
+      <div>
+        <h3 class="t-detail-title">DMK Lymphatic Detox<br>Enzyme Therapy</h3>
+        <p class="t-detail-desc">Oxygenate &amp; detox. Normalise skin metabolism, increase circulation, flush toxins, and revive dull skin. Includes Gua Sha massage to stimulate lymphatic drainage and restore a natural, healthy glow.</p>
+        <p class="t-detail-meta">Suitable for all skin types &nbsp;·&nbsp; 90 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-lift">
+      <div>
+        <h3 class="t-detail-title">Age-Defying<br>&amp; Lifting Facial</h3>
+        <p class="t-detail-desc">Turn back the clock. This advanced treatment combines DMK's enzyme therapy with targeted firming actives to visibly lift, tighten, and rejuvenate mature skin. Results are immediate and cumulative with each visit.</p>
+        <p class="t-detail-meta">Recommended for mature skin &nbsp;·&nbsp; 90 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-glow">
+      <div>
+        <h3 class="t-detail-title">Brightening<br>&amp; Glow Therapy</h3>
+        <p class="t-detail-desc">Illuminate your complexion. Targets hyperpigmentation, uneven skin tone, and dullness with a clinical, results-driven approach. Achieve radiant, even skin with effects that deepen over your treatment plan.</p>
+        <p class="t-detail-meta">Suitable for hyperpigmentation &nbsp;·&nbsp; 75 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-acne">
+      <div>
+        <h3 class="t-detail-title">Detoxifying<br>&amp; Acne Control</h3>
+        <p class="t-detail-desc">Clear, calm &amp; control. A deeply purifying treatment that combats congestion, breakouts, and excess sebum production. Rebalances the skin's chemistry and reduces inflammation for long-term clarity.</p>
+        <p class="t-detail-meta">Recommended for acne-prone skin &nbsp;·&nbsp; 75 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+  </div>
+
+  <!-- Holistic Massage -->
+  <div class="tab-panel" id="tab-massage">
+    <div class="t-list">
+      <div class="t-item">
+        <button class="t-btn active" data-detail="sig-massage">Saya Signature Face Massage <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="jr">JR Release, Rebalance &amp; Restore <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="body-massage">Therapeutic Body Massage <span class="ch">›</span></button>
+      </div>
+    </div>
+    <div class="t-detail active" id="detail-sig-massage">
+      <div>
+        <h3 class="t-detail-title">Saya Signature<br>Face Massage</h3>
+        <p class="t-detail-desc">Our most beloved ritual. A deeply relaxing facial massage using Gua Sha, lymphatic drainage techniques, and bespoke facial oils to sculpt, lift, and radiate your skin from within. Pure intentional touch.</p>
+        <p class="t-detail-meta">Suitable for all skin types &nbsp;·&nbsp; 60 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-jr">
+      <div>
+        <h3 class="t-detail-title">JR Release, Rebalance<br>&amp; Restore Therapy</h3>
+        <p class="t-detail-desc">A therapeutic full-body experience combining myofascial release, deep tissue techniques, and holistic energy work. Designed to release chronic tension, restore postural balance, and return your body to its natural state.</p>
+        <p class="t-detail-meta">Suitable for all &nbsp;·&nbsp; 90 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-body-massage">
+      <div>
+        <h3 class="t-detail-title">Therapeutic<br>Body Massage</h3>
+        <p class="t-detail-desc">Pure, restorative relaxation. A personalised body massage addressing your specific areas of tension using warm oils and advanced techniques calibrated to your body's needs. A ritual in complete surrender.</p>
+        <p class="t-detail-meta">Suitable for all &nbsp;·&nbsp; 60 / 90 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+  </div>
+
+  <!-- Celluma LED -->
+  <div class="tab-panel" id="tab-led">
+    <div class="t-list">
+      <div class="t-item">
+        <button class="t-btn active" data-detail="led-aging">Celluma Anti-Aging LED <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="led-acne">Celluma Acne Control LED <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="led-pain">Celluma Pain &amp; Healing LED <span class="ch">›</span></button>
+      </div>
+    </div>
+    <div class="t-detail active" id="detail-led-aging">
+      <div>
+        <h3 class="t-detail-title">Celluma<br>Anti-Aging LED</h3>
+        <p class="t-detail-desc">Harness the power of light. Celluma's clinically proven red LED technology stimulates collagen and elastin production, reduces fine lines, and improves skin tone with zero downtime and zero discomfort.</p>
+        <p class="t-detail-meta">Suitable for all skin types &nbsp;·&nbsp; 30 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-led-acne">
+      <div>
+        <h3 class="t-detail-title">Celluma<br>Acne Control LED</h3>
+        <p class="t-detail-desc">Blue light technology destroys acne-causing bacteria and reduces inflammation. Non-invasive, painless, and highly effective — delivering visible improvements in skin clarity within a short course of treatments.</p>
+        <p class="t-detail-meta">Recommended for acne-prone skin &nbsp;·&nbsp; 30 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-led-pain">
+      <div>
+        <h3 class="t-detail-title">Celluma<br>Pain &amp; Healing LED</h3>
+        <p class="t-detail-desc">Near-infrared light penetrates deep into tissue to reduce inflammation, accelerate healing, and relieve acute or chronic pain. Ideal as a standalone session or integrated into your ongoing treatment plan.</p>
+        <p class="t-detail-meta">Suitable for all &nbsp;·&nbsp; 30 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+  </div>
+
+  <!-- Advanced Skin Analysis -->
+  <div class="tab-panel" id="tab-scan">
+    <div class="t-list">
+      <div class="t-item">
+        <button class="t-btn active" data-detail="observ">OBSERV 560x Skin Imaging <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="skin-consult">Skin Consultation <span class="ch">›</span></button>
+      </div>
+    </div>
+    <div class="t-detail active" id="detail-observ">
+      <div>
+        <h3 class="t-detail-title">OBSERV 560x<br>Advanced Skin Imaging</h3>
+        <p class="t-detail-desc">See beneath the surface. The OBSERV 560x reveals hidden skin concerns — pigmentation, dehydration, congestion, and sun damage — invisible to the naked eye. A powerful diagnostic tool for building your personalised treatment plan.</p>
+        <p class="t-detail-meta">Included with consultation &nbsp;·&nbsp; 45 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-skin-consult">
+      <div>
+        <h3 class="t-detail-title">Comprehensive<br>Skin Consultation</h3>
+        <p class="t-detail-desc">Every transformation begins here. A thorough assessment of your skin's health, history, and goals — including OBSERV imaging, expert diagnosis, and a personalised treatment program designed exclusively for you.</p>
+        <p class="t-detail-meta">New clients · Includes LED &nbsp;·&nbsp; 60 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+  </div>
+
+  <!-- Body Rituals -->
+  <div class="tab-panel" id="tab-rituals">
+    <div class="t-list">
+      <div class="t-item">
+        <button class="t-btn active" data-detail="face-body">Therapeutic Face &amp; Body Ritual <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="addons">Enhancements &amp; Add-Ons <span class="ch">›</span></button>
+      </div>
+      <div class="t-item">
+        <button class="t-btn" data-detail="packages">Packages <span class="ch">›</span></button>
+      </div>
+    </div>
+    <div class="t-detail active" id="detail-face-body">
+      <div>
+        <h3 class="t-detail-title">Therapeutic Face<br>&amp; Body Ritual</h3>
+        <p class="t-detail-desc">The ultimate Saya experience. A full-body journey combining our signature facial with therapeutic bodywork — designed to reset, renew, and restore your entire being from head to toe. A ritual in pure surrender.</p>
+        <p class="t-detail-meta">All skin &amp; body types &nbsp;·&nbsp; 120 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-addons">
+      <div>
+        <h3 class="t-detail-title">Enhancements<br>&amp; Add-Ons</h3>
+        <p class="t-detail-desc">Elevate your treatment. Choose from our curated add-ons: Gua Sha upgrade, LED boost, targeted eye treatment, décolletage extension, or scalp massage — each crafted to complement and deepen any primary service.</p>
+        <p class="t-detail-meta">Added to any service &nbsp;·&nbsp; 15–30 min</p>
+      </div>
+      <a href="#booking" class="t-book">Book Now →</a>
+    </div>
+    <div class="t-detail" id="detail-packages">
+      <div>
+        <h3 class="t-detail-title">Treatment<br>Packages</h3>
+        <p class="t-detail-desc">The most powerful results come with commitment. Our curated packages are designed for clients ready to embark on a full skin transformation — combining multiple sessions at a preferred rate for accelerated, lasting outcomes.</p>
+        <p class="t-detail-meta">New &amp; returning clients &nbsp;·&nbsp; Flexible scheduling</p>
+      </div>
+      <a href="#booking" class="t-book">Enquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section class="process">
+  <div class="process-head reveal">
+    <p class="eyebrow" style="text-align:center;">Your Journey</p>
+    <h2 class="sec-title" style="text-align:center;">What to Expect</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal d1">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Consultation & Analysis</h3>
+      <p class="step-text">We begin with an in-depth skin assessment using the OBSERV 560x system to reveal hidden concerns beneath the surface. Your therapist maps a bespoke, personalised treatment plan.</p>
+    </div>
+    <div class="process-step reveal d2">
+      <div class="step-num">02</div>
+      <h3 class="step-title">The Ritual</h3>
+      <p class="step-text">Your treatment begins. Whether enzyme therapy or therapeutic massage, every moment is calibrated to your skin and body's unique needs — a truly individual experience each time.</p>
+    </div>
+    <div class="process-step reveal d3">
+      <div class="step-num">03</div>
+      <h3 class="step-title">Lasting Results</h3>
+      <p class="step-text">With DMK's cumulative approach, results deepen with every visit. We provide a detailed home-care protocol so your transformation continues long after you leave the treatment room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKIN CONSULTATION ========== -->
+<section class="consult" id="consult">
+  <div class="consult-content reveal">
+    <p class="eyebrow">New Clients</p>
+    <h2 class="sec-title">Skin Consultation</h2>
+    <p class="sec-body">
+      Every in-clinic consultation with our expert facialists includes an LED treatment. This is far more than a quick chat — it's a deep dive into your skin's health, guided by our highly experienced team.
+    </p>
+
+    <div class="consult-list">
+      <div class="consult-item">
+        <p class="consult-item-title">Expert Skin Diagnosis & Gentle Cleanse</p>
+        <p class="consult-item-text">We begin by thoroughly cleansing your skin and assessing its current condition. OBSERV 560x Advanced Skin Imaging reveals underlying concerns invisible to the naked eye.</p>
+      </div>
+      <div class="consult-item">
+        <p class="consult-item-title">Tailored Treatment Plan</p>
+        <p class="consult-item-text">Based on your skin analysis and goals, we create a detailed treatment program designed exclusively for you — emailed to you for easy reference and ongoing guidance.</p>
+      </div>
+      <div class="consult-item">
+        <p class="consult-item-title">Professional Product Recommendations</p>
+        <p class="consult-item-text">We'll guide you toward the right products to optimise your results and support long-term skin health between appointments.</p>
+      </div>
+      <div class="consult-item">
+        <p class="consult-item-title">LED Light Therapy Session</p>
+        <p class="consult-item-text">A relaxing LED treatment, customised to your skin type and concerns, to boost results and calm your skin. Included with every consultation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="consult-img">
+    <img src="saya_website_layouts/0297ded6c7e876087fee54f47e1e74ef.jpg" alt="Skin Consultation at Saya" loading="lazy">
+  </div>
+</section>
+
+<!-- ========== PHILOSOPHY ========== -->
+<section class="philosophy">
+  <div class="reveal">
+    <p class="phil-eyebrow">The Saya Philosophy</p>
+    <h2 class="phil-quote">
+      "Skin health is not a luxury — it is the foundation of confidence, vitality, and enduring wellbeing."
+    </h2>
+    <div class="phil-pillars">
+      <div class="pillar"><span>Remove</span><div class="pillar-rule"></div></div>
+      <div class="pillar"><span>Rebuild</span><div class="pillar-rule"></div></div>
+      <div class="pillar"><span>Protect</span><div class="pillar-rule"></div></div>
+      <div class="pillar"><span>Maintain</span><div class="pillar-rule"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-head reveal">
+    <p class="eyebrow">Results &amp; Stories</p>
+    <h2 class="sec-title">Client Experiences</h2>
+  </div>
+
+  <div class="testi-track">
+    <div class="testi-slide active">
+      <p class="testi-quote">"After just one session of DMK Enzyme Therapy, my skin looked completely transformed. The results lasted weeks — I've never experienced anything like it at any spa."</p>
+      <span class="testi-author">— Emma R.</span>
+    </div>
+    <div class="testi-slide">
+      <p class="testi-quote">"The Saya team's knowledge of DMK methodology is extraordinary. My skin concerns of over a decade were finally addressed with a real, clinical approach that truly delivers."</p>
+      <span class="testi-author">— Olivia M.</span>
+    </div>
+    <div class="testi-slide">
+      <p class="testi-quote">"The consultation alone was worth every penny. The OBSERV imaging showed me things beneath my skin I had no idea about. My treatment plan has completely changed my complexion."</p>
+      <span class="testi-author">— Sarah K.</span>
+    </div>
+    <div class="testi-slide">
+      <p class="testi-quote">"The JR Release therapy was unlike anything I've experienced. My back tension from years of desk work released in a single session. The atmosphere, the skill, the care — extraordinary."</p>
+      <span class="testi-author">— Natalie T.</span>
+    </div>
+  </div>
+
+  <div class="testi-dots">
+    <div class="dot active" data-i="0"></div>
+    <div class="dot" data-i="1"></div>
+    <div class="dot" data-i="2"></div>
+    <div class="dot" data-i="3"></div>
+  </div>
+</section>
+
+<!-- ========== BOOKING CTA ========== -->
+<section class="booking" id="booking">
+  <p class="eyebrow reveal">Begin Your Transformation</p>
+  <h2 class="booking-title reveal d1">Ready to Experience Saya?</h2>
+  <p class="booking-sub reveal d2">
+    Every journey begins with a consultation.<br>
+    Book yours today and discover what your skin is truly capable of.
+  </p>
+  <a href="mailto:hello@sayaspa.com" class="book-btn reveal d3">Book Your Appointment &nbsp;→</a>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-logo">saya</span>
+      <p class="footer-brand-desc">
+        Holistic Spa · Medical-Grade Facials<br>
+        DMK Methodology · Celluma LED Therapy<br>
+        Advanced Skin Analysis · Therapeutic Massage
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-head">Treatments</p>
+      <ul class="footer-links">
+        <li><a href="#treatments">DMK Skin Revision</a></li>
+        <li><a href="#treatments">Signature Face Massage</a></li>
+        <li><a href="#treatments">Celluma LED Therapy</a></li>
+        <li><a href="#treatments">Advanced Skin Analysis</a></li>
+        <li><a href="#treatments">Body Rituals</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">Information</p>
+      <ul class="footer-links">
+        <li><a href="#about">The Spa Experience</a></li>
+        <li><a href="#consult">New Client Consultation</a></li>
+        <li><a href="#testimonials">Results &amp; Stories</a></li>
+        <li><a href="#booking">Book an Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@sayaspa.com">hello@sayaspa.com</a></li>
+        <li><a href="tel:+12345678900">+1 (234) 567-8900</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Saya Holistic Spa. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Nav scroll ---- */
+  var nav = document.getElementById('nav');
+  function updateNav() {
+    nav.classList.toggle('solid', window.scrollY > 40);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  /* ---- Mobile menu ---- */
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', function () {
+    var isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  window.closeMobile = function () {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+  };
+
+  /* ---- Hero entrance ---- */
+  function heroIn() {
+    document.getElementById('heroBg').classList.add('loaded');
+    setTimeout(function () {
+      document.getElementById('heroH1').classList.add('in');
+      document.getElementById('heroCta').classList.add('in');
+    }, 80);
+  }
+  if (document.readyState === 'complete') { heroIn(); }
+  else { window.addEventListener('load', heroIn); }
+
+  /* ---- Scroll reveal ---- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  /* ---- Tabs ---- */
+  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + id);
+      panel.classList.add('active');
+      // activate first item
+      var firstBtn = panel.querySelector('.t-btn');
+      var firstDetail = panel.querySelector('.t-detail');
+      if (firstBtn && firstDetail) {
+        panel.querySelectorAll('.t-btn').forEach(function (b) { b.classList.remove('active'); });
+        panel.querySelectorAll('.t-detail').forEach(function (d) { d.classList.remove('active'); });
+        firstBtn.classList.add('active');
+        firstDetail.classList.add('active');
+      }
+    });
+  });
+
+  /* ---- Treatment accordion ---- */
+  document.querySelectorAll('.t-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = btn.closest('.tab-panel');
+      var detailId = btn.dataset.detail;
+      panel.querySelectorAll('.t-btn').forEach(function (b) { b.classList.remove('active'); });
+      panel.querySelectorAll('.t-detail').forEach(function (d) { d.classList.remove('active'); });
+      btn.classList.add('active');
+      var detail = document.getElementById('detail-' + detailId);
+      if (detail) { detail.classList.add('active'); }
+    });
+  });
+
+  /* ---- Testimonials ---- */
+  var slides = document.querySelectorAll('.testi-slide');
+  var dots = document.querySelectorAll('.dot');
+  var cur = 0;
+  var autoTimer;
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(function () { goTo(cur + 1); }, 5200);
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      clearInterval(autoTimer);
+      goTo(parseInt(dot.dataset.i, 10));
+      startAuto();
+    });
+  });
+
+  startAuto();
+
+  /* ---- Smooth anchor for hash links ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

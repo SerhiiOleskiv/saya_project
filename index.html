@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Saya Holistic Spa — medical-grade DMK Enzyme Therapy, Signature Face Massage, Celluma LED Therapy, and Advanced Skin Analysis. New York.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Saya Holistic Spa — Medical-Grade Facials &amp; Therapeutic Massage">
+  <meta property="og:description" content="Medical-grade holistic spa in New York. DMK Enzyme Therapy, Signature Face Massage, Celluma LED Therapy, and Advanced Skin Analysis.">
+  <meta property="og:image"       content="img/hero.jpg">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Saya Holistic Spa — Medical-Grade Facials &amp; Therapeutic Massage">
+  <meta name="twitter:description" content="Medical-grade holistic spa in New York. DMK Enzyme Therapy, Signature Face Massage, Celluma LED Therapy, and Advanced Skin Analysis.">
+  <meta name="twitter:image"       content="img/hero.jpg">
+
+  <title>Saya Holistic Spa — Medical-Grade Facials &amp; Therapeutic Massage, New York</title>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+    "name": "Saya Holistic Spa",
+    "description": "Medical-grade holistic spa specializing in DMK Enzyme Therapy, Signature Face Massage, Celluma LED Therapy, and Advanced Skin Analysis.",
+    "telephone": "+12123456789",
+    "email": "hello@sayaspa.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Spa Treatments",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "DMK Enzyme Therapy",
+            "description": "Paramedical facial using DMK's enzyme masque to oxygenate, detoxify and firm the skin at a cellular level."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Saya Signature Face Massage",
+            "description": "Combines Eastern and Western massage techniques to lift, sculpt and illuminate the complexion."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Celluma LED Therapy",
+            "description": "Clinically proven LED light therapy for anti-aging, acne control and skin repair."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Advanced Skin Analysis",
+            "description": "OBSERV 560x skin imaging consultation to map a bespoke treatment plan."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====================== NAV ====================== -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <ul class="nav__links nav__links--left" role="list">
+      <li><a href="#services">The Spa Experience</a></li>
+      <li><a href="#treatments">Rituals &amp; Treatments</a></li>
+    </ul>
+
+    <a class="nav__logo" href="#home" aria-label="Saya Holistic Spa — home">
+      <img class="nav__logo-img" src="img/logo.png" alt="Saya Holistic Spa" width="120" height="120">
+    </a>
+
+    <ul class="nav__links nav__links--right" role="list">
+      <li><a href="#testimonials">Results &amp; Stories</a></li>
+      <li><a href="#booking" class="nav__book">Book Now</a></li>
+      <li class="nav__burger-cell">
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ====================== MOBILE MENU ====================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <nav aria-label="Mobile navigation">
+      <a href="#services"     class="mobile-menu__link" tabindex="-1">The Spa Experience</a>
+      <a href="#treatments"   class="mobile-menu__link" tabindex="-1">Rituals &amp; Treatments</a>
+      <a href="#consultation" class="mobile-menu__link" tabindex="-1">Skin Consultation</a>
+      <a href="#testimonials" class="mobile-menu__link" tabindex="-1">Results &amp; Stories</a>
+      <a href="#booking"      class="mobile-menu__link mobile-menu__link--cta" tabindex="-1">Book Now &nbsp;→</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ====================== S1 HERO ====================== -->
+    <section class="hero" id="home" aria-label="Saya Holistic Spa">
+      <div class="hero__bg" id="heroBg" role="img" aria-label="Saya Holistic Spa treatment room"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__center" aria-hidden="false">
+        <h1 class="hero__headline" id="heroH1">
+          Transformative Experience.<br>Rejuvenating Touch.
+        </h1>
+      </div>
+
+      <a href="#booking" class="hero__cta" id="heroCta">
+        Start Your Journey &nbsp;→
+      </a>
+    </section>
+
+    <!-- ====================== S2 SERVICES ====================== -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <h2 class="sr-only" id="services-heading">Our Treatments</h2>
+
+      <div class="services__top">
+        <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+      </div>
+
+      <div class="services__grid">
+
+        <article class="svc-card reveal">
+          <a href="#treatments" class="svc-card__inner" tabindex="0">
+            <div class="svc-card__img-wrap">
+              <img
+                src="img/card-dmk.jpg"
+                alt="DMK Enzyme Therapy facial treatment"
+                width="400" height="533"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__label">
+              <span>DMK Skin Revision</span>
+              <span class="svc-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:0.1s">
+          <a href="#treatments" class="svc-card__inner" tabindex="0">
+            <div class="svc-card__img-wrap">
+              <img
+                src="img/card-massage.jpg"
+                alt="Saya Signature Face Massage with Gua Sha"
+                width="400" height="533"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__label">
+              <span>Saya Signature Face Massage</span>
+              <span class="svc-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:0.2s">
+          <a href="#treatments" class="svc-card__inner" tabindex="0">
+            <div class="svc-card__img-wrap">
+              <img
+                src="img/card-restore.jpg"
+                alt="JR Release Rebalance and Restore Therapy"
+                width="400" height="533"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__label">
+              <span>JR Release, Rebalance &amp; Restore</span>
+              <span class="svc-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="svc-card reveal" style="--delay:0.3s">
+          <a href="#treatments" class="svc-card__inner" tabindex="0">
+            <div class="svc-card__img-wrap">
+              <img
+                src="img/card-scan.jpg"
+                alt="Advanced Skin Analysis and Consultation"
+                width="400" height="533"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__label">
+              <span>Advanced Skin Scan</span>
+              <span class="svc-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================== S3 BANNER ====================== -->
+    <section class="banner" aria-label="DMK Methodology">
+      <div class="banner__bg" aria-hidden="true"></div>
+      <div class="banner__overlay" aria-hidden="true"></div>
+      <div class="banner__content reveal">
+        <p class="banner__text">
+          With DMK's unique approach of <strong>REMOVE</strong>, <strong>REBUILD</strong>, <strong>PROTECT</strong>, and <strong>MAINTAIN</strong>, our therapists are equipped to deliver long-lasting, visible results.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================== S4 ENZYME ====================== -->
+    <section class="enzyme" id="about" aria-labelledby="enzyme-heading">
+      <h2 class="enzyme__title" id="enzyme-heading">What Is Enzyme Therapy</h2>
+
+      <div class="enzyme__split">
+        <div class="enzyme__image">
+          <img
+            src="img/enzyme.jpg"
+            alt="DMK enzyme masque applied with a brush during treatment"
+            width="600" height="750"
+            loading="lazy" decoding="async">
+        </div>
+        <div class="enzyme__content reveal">
+          <p class="enzyme__body">
+            DMK's famous Enzyme Therapy and skin health revision will give you instant plumping — oxygenating, detoxifying, and energising your skin using your lymphatic system. This unique treatment brings fresh blood throughout your skin, kick-starting its optimal functioning for long-term results.
+          </p>
+          <p class="enzyme__body">
+            Detoxifies, purifies, and stimulates skin health for your first visit. Includes deep cleanse, Enzyme Therapy, and Transepidermal Infusion.
+          </p>
+          <p class="enzyme__body">
+            This facial treatment is paramedical — focused on achieving specific results and clinically measurable outcomes, rather than being designed for relaxation purposes alone.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== S5 TREATMENT MENU ====================== -->
+    <section class="treatments" id="treatments" aria-labelledby="treatments-heading">
+      <div class="treatments__header">
+        <h2 class="treatments__title" id="treatments-heading">DMK Skin Revision</h2>
+        <span class="treatments__logo" aria-hidden="true"><em>saya</em></span>
+      </div>
+
+      <!-- Tab bar -->
+      <div class="treatments__tabs" role="tablist" aria-label="Treatment categories">
+        <button class="tab" role="tab" aria-selected="true"  aria-controls="panel-signature" id="tab-signature">Signature DMK Facials</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-massage"   id="tab-massage">Holistic Massage</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-led"       id="tab-led">Celluma LED</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-scan"      id="tab-scan">Advanced Skin Analysis</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-body"      id="tab-body">Body Rituals</button>
+      </div>
+
+      <!-- Panel: Signature DMK -->
+      <div class="treatments__panel" id="panel-signature" role="tabpanel" aria-labelledby="tab-signature">
+        <ul class="t-list" role="list">
+          <li class="t-list__item t-list__item--active">
+            <button class="t-list__btn" data-detail="enzyme" aria-expanded="true">
+              DMK Biochaking Enzyme Therapy <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="lymphatic" aria-expanded="false">
+              DMK Lymphatic Detox Enzyme Therapy <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="proenzyme" aria-expanded="false">
+              Pro Enzyme Therapy &amp; Hydradermabrasion <span aria-hidden="true">›</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="t-detail" id="detail-enzyme">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">DMK Biochaking Enzyme Therapy</h3>
+            <p class="t-detail__desc">Detox, strengthen &amp; glow. A revolutionary oxygenating treatment that boosts circulation, firms the skin, and enhances radiance. DMK's signature enzyme masque works with your body's own chemistry to create real, lasting change at a cellular level.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Suitable for all skin types.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-lymphatic">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">DMK Lymphatic Detox Enzyme Therapy</h3>
+            <p class="t-detail__desc">Oxygenate &amp; detox. Normalise skin metabolism, increase circulation, flush toxins, and revive dull skin. Includes Gua Sha massage to stimulate lymphatic drainage and restore a healthy glow.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Suitable for all skin types.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-proenzyme">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Pro Enzyme Therapy &amp; Hydradermabrasion</h3>
+            <p class="t-detail__desc">Deep resurfacing combined with enzyme therapy for a dual-action treatment that exfoliates, oxygenates, and deeply nourishes. Leaves skin immediately brighter, smoother, and more even-toned.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Suitable for most skin types.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Holistic Massage -->
+      <div class="treatments__panel treatments__panel--hidden" id="panel-massage" role="tabpanel" aria-labelledby="tab-massage">
+        <ul class="t-list" role="list">
+          <li class="t-list__item t-list__item--active">
+            <button class="t-list__btn" data-detail="signature-massage" aria-expanded="true">
+              Saya Signature Face Massage <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="jr-release" aria-expanded="false">
+              JR Release, Rebalance &amp; Restore <span aria-hidden="true">›</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="t-detail" id="detail-signature-massage">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Saya Signature Face Massage</h3>
+            <p class="t-detail__desc">A deeply relaxing yet results-driven facial massage combining Eastern and Western techniques. Lifts and sculpts facial contours, releases tension in the jaw and brow, and stimulates circulation for an immediate, visible glow.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Suitable for all skin types.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-jr-release">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">JR Release, Rebalance &amp; Restore</h3>
+            <p class="t-detail__desc">A therapeutic journey combining facial and body massage with healing touch to release chronic tension, rebalance the nervous system, and restore full-body equilibrium. Deeply transformative and profoundly restorative.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Recommended for stress &amp; tension.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Celluma LED -->
+      <div class="treatments__panel treatments__panel--hidden" id="panel-led" role="tabpanel" aria-labelledby="tab-led">
+        <ul class="t-list" role="list">
+          <li class="t-list__item t-list__item--active">
+            <button class="t-list__btn" data-detail="led-anti-aging" aria-expanded="true">
+              Celluma LED Anti-Aging <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="led-acne" aria-expanded="false">
+              Celluma LED Acne Control <span aria-hidden="true">›</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="t-detail" id="detail-led-anti-aging">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Celluma LED Anti-Aging</h3>
+            <p class="t-detail__desc">Harness the power of red light. Celluma's clinically proven LED technology stimulates collagen and elastin production, reduces fine lines, and improves skin tone with zero downtime and zero discomfort.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Suitable for all skin types.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-led-acne">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Celluma LED Acne Control</h3>
+            <p class="t-detail__desc">Blue light technology destroys acne-causing bacteria and reduces inflammation. Non-invasive, painless, and effective — delivering visible improvements in skin clarity within a short course of treatments.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Recommended for acne-prone skin.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Advanced Skin Analysis -->
+      <div class="treatments__panel treatments__panel--hidden" id="panel-scan" role="tabpanel" aria-labelledby="tab-scan">
+        <ul class="t-list" role="list">
+          <li class="t-list__item t-list__item--active">
+            <button class="t-list__btn" data-detail="observ" aria-expanded="true">
+              OBSERV 560x Skin Imaging <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="consult-full" aria-expanded="false">
+              Comprehensive New Client Consultation <span aria-hidden="true">›</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="t-detail" id="detail-observ">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">OBSERV 560x Skin Imaging</h3>
+            <p class="t-detail__desc">Advanced skin imaging technology that reveals conditions invisible to the naked eye — dehydration, pigmentation, sun damage, and early signs of ageing — allowing us to map a truly precise treatment plan for your skin.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Included in all consultations.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-consult-full">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Comprehensive New Client Consultation</h3>
+            <p class="t-detail__desc">$160 — includes OBSERV 560x skin analysis, expert skin diagnosis, bespoke treatment plan, professional product recommendations, and a complimentary LED therapy session. Everything your skin needs to begin its transformation.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Includes LED therapy. $160.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Body Rituals -->
+      <div class="treatments__panel treatments__panel--hidden" id="panel-body" role="tabpanel" aria-labelledby="tab-body">
+        <ul class="t-list" role="list">
+          <li class="t-list__item t-list__item--active">
+            <button class="t-list__btn" data-detail="face-body" aria-expanded="true">
+              Face &amp; Body Ritual <span aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="t-list__item">
+            <button class="t-list__btn" data-detail="enhancements" aria-expanded="false">
+              Enhancements &amp; Add-Ons <span aria-hidden="true">›</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="t-detail" id="detail-face-body">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Face &amp; Body Ritual</h3>
+            <p class="t-detail__desc">A holistic experience that harmonises face and body in a single extended session. Combines DMK enzyme therapy with therapeutic body massage and LED treatment for a total mind-body reset.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Extended session. Enquire for pricing.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+
+        <div class="t-detail t-detail--hidden" id="detail-enhancements">
+          <div class="t-detail__body">
+            <h3 class="t-detail__title">Enhancements &amp; Add-Ons</h3>
+            <p class="t-detail__desc">Customise any treatment with targeted add-ons: Gua Sha sculpting, Celluma LED session, enzyme eye therapy, or a personalised home-care prescription. Ask your therapist which enhancements will best support your skin goals.</p>
+          </div>
+          <div class="t-detail__footer">
+            <span class="t-detail__meta">Available with any treatment.</span>
+            <a href="#booking" class="link-arrow">Book Now &nbsp;→</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================== S6 SKIN CONSULTATION ====================== -->
+    <section class="consult" id="consultation" aria-labelledby="consult-heading">
+      <h2 class="consult__title" id="consult-heading">Skin Consultation</h2>
+
+      <p class="consult__intro">
+        Every in-clinic consultation with our expert facialists is $160 and includes an LED treatment. This is far more than a quick chat — it's a deep dive into your skin's health with the guidance of our highly experienced team.
+      </p>
+      <p class="consult__lead">Here's what you can expect:</p>
+
+      <div class="consult__items">
+
+        <div class="consult__item reveal">
+          <h3 class="consult__item-title">Expert Skin Diagnosis &amp; Gentle Cleanse</h3>
+          <p class="consult__item-text">We begin by thoroughly cleansing your skin and assessing its current condition. OBSERV 560x Advanced Skin Imaging reveals underlying concerns invisible to the naked eye, so we can build a precise picture of your skin's health.</p>
+        </div>
+
+        <div class="consult__item reveal" style="--delay:0.1s">
+          <h3 class="consult__item-title">Tailored Treatment Plan</h3>
+          <p class="consult__item-text">Based on your skin analysis and goals, we create a detailed treatment program designed exclusively for you. This plan can be emailed to you for easy reference and ongoing guidance.</p>
+        </div>
+
+        <div class="consult__item reveal" style="--delay:0.2s">
+          <h3 class="consult__item-title">Professional Product Recommendations</h3>
+          <p class="consult__item-text">We'll guide you toward the right products to optimise your results and support long-term skin health between appointments.</p>
+        </div>
+
+        <div class="consult__item reveal" style="--delay:0.3s">
+          <h3 class="consult__item-title">LED Light Therapy Session</h3>
+          <p class="consult__item-text">A relaxing LED treatment, customised to your skin type and concerns, to boost results and calm your skin. Included with every consultation.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== S7 PROCESS ====================== -->
+    <section class="process" id="process" aria-labelledby="process-heading">
+      <h2 class="process__title" id="process-heading">What to Expect</h2>
+
+      <div class="process__steps">
+
+        <div class="process__step reveal">
+          <span class="process__num" aria-hidden="true">01</span>
+          <h3 class="process__step-title">Consultation &amp; Analysis</h3>
+          <p class="process__step-text">We begin with an in-depth skin assessment using OBSERV 560x to reveal hidden concerns beneath the surface. Your therapist maps a bespoke, personalised treatment plan tailored exclusively to you.</p>
+        </div>
+
+        <div class="process__step reveal" style="--delay:0.15s">
+          <span class="process__num" aria-hidden="true">02</span>
+          <h3 class="process__step-title">The Ritual</h3>
+          <p class="process__step-text">Your treatment begins. Whether enzyme therapy, massage, or LED — every minute is calibrated to your skin and body's unique needs. A truly individual experience each and every visit.</p>
+        </div>
+
+        <div class="process__step reveal" style="--delay:0.3s">
+          <span class="process__num" aria-hidden="true">03</span>
+          <h3 class="process__step-title">Lasting Results</h3>
+          <p class="process__step-text">With DMK's cumulative approach, results deepen with every visit. We provide a detailed home-care protocol so your transformation continues long after you leave the treatment room.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== S8 TESTIMONIALS ====================== -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testi-heading">
+      <h2 class="testimonials__title" id="testi-heading">Results &amp; Stories</h2>
+
+      <div class="testimonials__track" aria-live="polite" aria-atomic="true">
+
+        <figure class="testi-slide testi-slide--active" role="group" aria-label="Testimonial 1 of 4">
+          <blockquote class="testi-slide__quote">
+            <p>"After just one DMK Enzyme session, my skin looked completely transformed. The results lasted weeks — I've never experienced anything like it at any spa."</p>
+          </blockquote>
+          <figcaption class="testi-slide__author">— Emma R.</figcaption>
+        </figure>
+
+        <figure class="testi-slide" role="group" aria-label="Testimonial 2 of 4" aria-hidden="true">
+          <blockquote class="testi-slide__quote">
+            <p>"Their knowledge of DMK methodology is extraordinary. My decade-long skin concerns were finally addressed with a clinical approach that actually delivers real results."</p>
+          </blockquote>
+          <figcaption class="testi-slide__author">— Olivia M.</figcaption>
+        </figure>
+
+        <figure class="testi-slide" role="group" aria-label="Testimonial 3 of 4" aria-hidden="true">
+          <blockquote class="testi-slide__quote">
+            <p>"The OBSERV imaging showed me things beneath my skin I had no idea about. My treatment plan has completely transformed my complexion over three sessions."</p>
+          </blockquote>
+          <figcaption class="testi-slide__author">— Sarah K.</figcaption>
+        </figure>
+
+        <figure class="testi-slide" role="group" aria-label="Testimonial 4 of 4" aria-hidden="true">
+          <blockquote class="testi-slide__quote">
+            <p>"The JR Release therapy released tension I'd carried for years. The atmosphere, the skill, the care — truly extraordinary. I won't go anywhere else."</p>
+          </blockquote>
+          <figcaption class="testi-slide__author">— Natalie T.</figcaption>
+        </figure>
+
+      </div>
+
+      <div class="testimonials__dots" role="group" aria-label="Testimonial navigation">
+        <button class="testi-dot testi-dot--active" data-slide="0" aria-label="Go to testimonial 1" aria-current="true"></button>
+        <button class="testi-dot" data-slide="1" aria-label="Go to testimonial 2"></button>
+        <button class="testi-dot" data-slide="2" aria-label="Go to testimonial 3"></button>
+        <button class="testi-dot" data-slide="3" aria-label="Go to testimonial 4"></button>
+      </div>
+    </section>
+
+    <!-- ====================== S9 BOOKING CTA ====================== -->
+    <section class="booking" id="booking" aria-labelledby="booking-heading">
+      <div class="booking__inner reveal">
+        <p class="booking__eyebrow">Begin Your Transformation</p>
+        <h2 class="booking__title" id="booking-heading">Ready to Experience Saya?</h2>
+        <p class="booking__sub">Every journey begins with a consultation.<br>Book yours today and discover what your skin is truly capable of.</p>
+        <a href="mailto:hello@sayaspa.com" class="btn-outline">Book Your Appointment &nbsp;→</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer" id="contact">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="#home" class="footer__logo" aria-label="Saya — home">
+          <img class="footer__logo-img" src="img/logo.png" alt="Saya Holistic Spa" width="100" height="100">
+        </a>
+        <p class="footer__tagline">
+          Holistic Spa · Medical-Grade Facials<br>
+          DMK Methodology · Celluma LED Therapy<br>
+          Advanced Skin Analysis · Therapeutic Massage
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__heading">Treatments</p>
+        <ul class="footer__links" role="list">
+          <li><a href="#treatments">DMK Skin Revision</a></li>
+          <li><a href="#treatments">Signature Face Massage</a></li>
+          <li><a href="#treatments">Celluma LED Therapy</a></li>
+          <li><a href="#treatments">Advanced Skin Analysis</a></li>
+          <li><a href="#treatments">Body Rituals</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__heading">Information</p>
+        <ul class="footer__links" role="list">
+          <li><a href="#services">The Spa Experience</a></li>
+          <li><a href="#consultation">New Client Consultation</a></li>
+          <li><a href="#process">What to Expect</a></li>
+          <li><a href="#testimonials">Results &amp; Stories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__heading">Contact</p>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:hello@sayaspa.com">hello@sayaspa.com</a></li>
+          <li><a href="tel:+12123456789">+1 (212) 345-6789</a></li>
+          <li><a href="#" aria-label="Follow Saya on Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Follow Saya on Facebook">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Saya Holistic Spa. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="Saya on Instagram">Instagram</a>
+        <a href="#" aria-label="Saya on Facebook">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky booking bar (shown on mobile when past hero) -->
+  <div class="sticky-bar" id="stickyBar" aria-hidden="true">
+    <a href="#booking" class="sticky-bar__btn" tabindex="-1">Book Now →</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
