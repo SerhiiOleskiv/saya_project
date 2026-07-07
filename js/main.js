@@ -37,7 +37,7 @@
   var mobileMenu = document.getElementById('mobileMenu');
 
   function getMenuLinks() {
-    return mobileMenu ? mobileMenu.querySelectorAll('.mobile-menu__link') : [];
+    return mobileMenu ? mobileMenu.querySelectorAll('.mobile-menu__link, .mobile-menu__link--cta, .mobile-menu__instagram') : [];
   }
 
   function openMenu() {

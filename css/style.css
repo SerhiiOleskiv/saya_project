@@ -6,6 +6,7 @@
 /* ---------- TOKENS ---------- */
 :root {
   --c-brand:     #2c2c2c;
+  --c-black:     #000000;
   --c-white:     #ffffff;
   --c-off-white: #f7f6f3;
   --c-light:     #e5e3de;
@@ -131,10 +132,10 @@ button {
 }
 
 .nav__links a {
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 450;
+  letter-spacing: 0;
+  text-transform: none;
   color: rgba(255, 255, 255, 0.9);
   transition: opacity 0.2s, color 0.45s;
   white-space: nowrap;
@@ -142,19 +143,21 @@ button {
 .nav__links a:hover { opacity: 0.5; }
 .nav--solid .nav__links a { color: var(--c-brand); }
 
+.nav__icon-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity 0.2s, color 0.45s;
+  margin-left: -18px;
+}
+.nav--solid .nav__icon-link { color: var(--c-brand); }
+.nav__icon-link:hover { opacity: 0.5; }
+
 .nav__book {
-  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 7px 18px;
 }
 .nav__book:hover {
-  background: var(--c-white);
-  color: var(--c-brand) !important;
   opacity: 1 !important;
-}
-.nav--solid .nav__book { border-color: var(--c-brand); }
-.nav--solid .nav__book:hover {
-  background: var(--c-brand);
-  color: var(--c-white) !important;
 }
 
 /* Logo */
@@ -163,10 +166,11 @@ button {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding-top: 10px;
 }
 .nav__logo-img {
   display: block;
-  height: 80px;
+  height: 56px;
   width: auto;
   /* Logo is white — visible on dark hero */
   filter: brightness(0) invert(1);
@@ -221,11 +225,11 @@ button {
 
 .mobile-menu__link {
   display: block;
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--c-brand);
-  padding: 20px 0;
+  padding: 15px 0;
   border-bottom: 1px solid var(--c-light);
   transition: opacity 0.2s;
 }
@@ -233,11 +237,36 @@ button {
 .mobile-menu__link:hover { opacity: 0.45; }
 
 .mobile-menu__link--cta {
-  margin-top: 24px;
-  border-top: none;
-  border-bottom: none;
+  font-size: 0.8rem;
   font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
+
+.mobile-menu__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.mobile-menu__icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.mobile-menu__instagram {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  color: var(--c-mid);
+  transition: color 0.2s;
+}
+.mobile-menu__instagram:hover { color: var(--c-brand); }
 
 /* =============================================================================
    HERO
@@ -252,7 +281,7 @@ button {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('../img/hero.jpg') center 30% / cover no-repeat;
+  background: url('../img/biohackingcopy.PNG') center 30% / cover no-repeat;
   transform: scale(1.06);
   transition: transform 1.8s var(--ease);
   will-change: transform;
@@ -282,11 +311,10 @@ button {
 
 .hero__headline {
   font-family: var(--font);
-  font-size: clamp(1.55rem, 5vw, 2.75rem);
+  font-size: clamp(1.55rem, 5vw, 2rem);
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
   color: var(--c-white);
-  line-height: 1.35;
   text-align: center;
   max-width: 580px;
   opacity: 0;
@@ -305,8 +333,8 @@ button {
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--c-white);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -332,11 +360,27 @@ button {
   background: var(--c-white);
 }
 
-.services__top {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 32px;
+.services__intro {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  padding: 0 var(--px);
 }
+.services__intro-tagline {
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--c-brand);
+  margin-bottom: 24px;
+}
+.services__intro-body {
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: var(--c-black);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+}
+.services__intro-body:last-child { margin-bottom: 0; }
 
 .services__grid {
   display: grid;
@@ -367,24 +411,29 @@ button {
 
 .svc-card__label {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   padding: 14px 0 0;
-  font-size: 0.57rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--c-brand);
+  flex-direction: column;
+}
+.svc-card__label-title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 4px;
+}
+.svc-card__label-sub {
+  display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--c-black);
 }
 
-.svc-card__arrow {
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-.svc-card__inner:hover .svc-card__arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
 
 /* =============================================================================
    BANNER
@@ -492,13 +541,6 @@ button {
   text-transform: uppercase;
 }
 
-.treatments__logo {
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--c-mid);
-  letter-spacing: 0.1em;
-  line-height: 1;
-}
 
 /* Tab bar */
 .treatments__tabs {
@@ -852,6 +894,7 @@ button {
 .footer {
   background: var(--c-brand);
   padding: 56px var(--px) 28px;
+  padding-bottom: calc(28px + 30px); /* extra space for sticky bar on mobile */
 }
 
 .footer__grid {
@@ -917,14 +960,13 @@ button {
   display: flex;
   gap: 20px;
 }
-.footer__social a {
-  font-size: 0.56rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.35);
   transition: color 0.2s;
 }
-.footer__social a:hover { color: rgba(255, 255, 255, 0.7); }
+.footer__social-link:hover { color: rgba(255, 255, 255, 0.8); }
 
 /* =============================================================================
    SCROLL REVEALS
@@ -986,6 +1028,8 @@ button {
   .banner { min-height: 440px; }
 
   .enzyme__image img { height: 460px; }
+
+  .hero__cta { font-size: 1.2rem; }
 }
 
 /* =============================================================================
@@ -1006,6 +1050,9 @@ button {
   /* Disable mobile-only elements */
   .mobile-menu { display: none !important; }
   .sticky-bar  { display: none; }
+
+  /* Remove sticky bar offset on desktop */
+  .footer { padding-bottom: 28px; }
 
   /* Services: 4 columns */
   .services__grid {
