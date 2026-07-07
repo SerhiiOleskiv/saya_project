@@ -453,7 +453,7 @@ button {
 .banner__bg {
   position: absolute;
   inset: 0;
-  background: url('../img/banner-bg.jpg') center 60% / cover no-repeat;
+  background: url('../img/banner-bg.JPG') center 60% / cover no-repeat;
 }
 
 .banner__overlay {
