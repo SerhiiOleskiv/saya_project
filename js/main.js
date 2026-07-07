@@ -92,7 +92,14 @@
     }, 450);
   }
 
-  if (document.readyState === 'complete') {
+  if (heroBg && heroBg.tagName === 'VIDEO') {
+    if (heroBg.readyState >= 3) {
+      runHeroEntrance();
+    } else {
+      heroBg.addEventListener('canplay', runHeroEntrance, { once: true });
+      setTimeout(runHeroEntrance, 1500);
+    }
+  } else if (document.readyState === 'complete') {
     runHeroEntrance();
   } else {
     window.addEventListener('load', runHeroEntrance);
@@ -248,7 +255,53 @@
   }
 
   /* ==========================================================================
-     8. SMOOTH SCROLL
+     8. DMK INTRO TAGS — accordion
+     ========================================================================== */
+  var dmkTags   = document.querySelectorAll('.dmk-intro__tag');
+  var dmkPanels = document.querySelectorAll('.dmk-intro__panel');
+
+  dmkTags.forEach(function (tag) {
+    tag.addEventListener('click', function () {
+      var targetId = tag.getAttribute('data-panel');
+      var isActive = tag.classList.contains('is-active');
+
+      dmkTags.forEach(function (t) { t.classList.remove('is-active'); });
+      dmkPanels.forEach(function (p) { p.classList.remove('is-active'); });
+
+      if (!isActive) {
+        tag.classList.add('is-active');
+        var panel = document.getElementById(targetId);
+        if (panel) { panel.classList.add('is-active'); }
+      }
+    });
+  });
+
+  /* ==========================================================================
+     9. BASICS FAQ — accordion
+     ========================================================================== */
+  var basicsItems = document.querySelectorAll('.basics__item');
+
+  basicsItems.forEach(function (item) {
+    var btn = item.querySelector('.basics__question');
+    if (!btn) { return; }
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open') || item.classList.contains('basics__item--open');
+
+      basicsItems.forEach(function (i) {
+        i.classList.remove('is-open', 'basics__item--open');
+        var b = i.querySelector('.basics__question');
+        if (b) { b.setAttribute('aria-expanded', 'false'); }
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ==========================================================================
+     10. SMOOTH SCROLL
      ========================================================================== */
   var NAV_HEIGHT = parseInt(
     getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '70',

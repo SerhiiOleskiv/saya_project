@@ -281,7 +281,10 @@ button {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('../img/biohackingcopy.PNG') center 30% / cover no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transform: scale(1.06);
   transition: transform 1.8s var(--ease);
   will-change: transform;
@@ -450,33 +453,206 @@ button {
 .banner__bg {
   position: absolute;
   inset: 0;
-  background: url('../img/card-dmk.jpg') center 30% / cover no-repeat;
+  background: url('../img/banner-bg.jpg') center 60% / cover no-repeat;
 }
 
 .banner__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(44, 44, 44, 0.65);
 }
 
-.banner__content {
-  position: relative;
-  z-index: 1;
-  padding: 56px var(--px);
-  max-width: 800px;
+
+/* =============================================================================
+   DMK INTRO
+   ============================================================================= */
+.dmk-intro {
+  padding: 80px var(--px);
+  background: var(--c-white);
+}
+.dmk-intro__inner {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
-
-.banner__text {
-  font-size: clamp(0.9rem, 2.4vw, 1.2rem);
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--c-white);
-  letter-spacing: 0.02em;
+.dmk-intro__title {
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--c-brand);
+  margin-bottom: 8px;
 }
-.banner__text strong {
-  font-weight: 600;
-  letter-spacing: 0.1em;
+.dmk-intro__subtitle {
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--c-brand);
+  margin-bottom: 24px;
+}
+.dmk-intro__body {
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: var(--c-black);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+}
+.dmk-intro__body:last-child { margin-bottom: 0; }
+
+.dmk-intro__tags {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 40px;
+}
+.dmk-intro__tag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dmk-intro__tag {
+  width: 100%;
+  border: 1px solid var(--c-brand);
+  border-radius: 8px;
+  padding: 12px 52px;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.dmk-intro__tag:hover {
+  background: var(--c-light);
+}
+.dmk-intro__tag.is-active {
+  background: var(--c-brand);
+  color: var(--c-white);
+}
+
+.dmk-intro__panel {
+  text-align: center;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 1.2s var(--ease), opacity 1.2s var(--ease), margin-top 0.8s var(--ease);
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: var(--c-black);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.dmk-intro__panel.is-active {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 20px;
+  transition: max-height 1.2s var(--ease), opacity 1.2s var(--ease), margin-top 0.8s var(--ease);
+}
+
+/* =============================================================================
+   BASICS FAQ
+   ============================================================================= */
+.basics {
+  display: flex;
+  flex-direction: column;
+}
+.basics__image {
+  width: 100%;
+  overflow: hidden;
+  max-height: 60vh;
+}
+.basics__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.basics__content {
+  padding: 64px var(--px);
+  background: var(--c-white);
+}
+.basics__title {
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--c-brand);
+  margin-bottom: 48px;
+}
+.basics__item {
+  border-top: 1px solid var(--c-light);
+}
+.basics__item:last-child {
+  border-bottom: 1px solid var(--c-light);
+}
+.basics__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 28px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: var(--c-brand);
+  cursor: pointer;
+  gap: 16px;
+}
+.basics__chevron {
+  flex-shrink: 0;
+  transition: transform 0.4s var(--ease);
+  transform: rotate(180deg);
+}
+.basics__item--open .basics__chevron,
+.basics__item.is-open .basics__chevron {
+  transform: rotate(180deg);
+}
+.basics__item:not(.basics__item--open):not(.is-open) .basics__chevron {
+  transform: rotate(0deg);
+}
+.basics__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s var(--ease), opacity 0.5s var(--ease), padding-bottom 0.4s var(--ease);
+  opacity: 0;
+  padding-bottom: 0;
+}
+.basics__item--open .basics__answer,
+.basics__item.is-open .basics__answer {
+  max-height: 300px;
+  opacity: 1;
+  padding-bottom: 28px;
+}
+.basics__answer p {
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: var(--c-black);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+@media (min-width: 1024px) {
+  .basics {
+    flex-direction: row;
+    min-height: 422px;
+    max-height: 528px;
+    overflow: hidden;
+  }
+  .basics__image {
+    width: 50%;
+    max-height: none;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+  .basics__image img {
+    height: 100%;
+  }
+  .basics__content {
+    width: 50%;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 /* =============================================================================
@@ -1008,6 +1184,10 @@ button {
   color: var(--c-white);
 }
 
+@media (min-width: 425px) {
+  .dmk-intro__tags { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* =============================================================================
    RESPONSIVE — SMALL TABLET (640px+)
    ============================================================================= */
@@ -1030,6 +1210,7 @@ button {
   .enzyme__image img { height: 460px; }
 
   .hero__cta { font-size: 1.2rem; }
+
 }
 
 /* =============================================================================
@@ -1041,6 +1222,8 @@ button {
     --px:    60px;
     --py:    110px;
   }
+
+  .dmk-intro__tags { grid-template-columns: repeat(4, 1fr); }
 
   /* Show nav links, hide burger */
   .nav__links--left li,
@@ -1065,8 +1248,6 @@ button {
     min-height: 500px;
     align-items: flex-end;
   }
-  .banner__content { padding: 72px var(--px); }
-
   /* Enzyme: split layout */
   .enzyme__split {
     flex-direction: row;

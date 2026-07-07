@@ -154,7 +154,9 @@
 
     <!-- ====================== S1 HERO ====================== -->
     <section class="hero" id="home" aria-label="Saya Holistic Spa">
-      <div class="hero__bg" id="heroBg" role="img" aria-label="Saya Holistic Spa treatment room"></div>
+      <video class="hero__bg" id="heroBg" autoplay muted loop playsinline aria-hidden="true">
+        <source src="img/bgsaya.mp4" type="video/mp4">
+      </video>
       <div class="hero__overlay" aria-hidden="true"></div>
 
       <div class="hero__center" aria-hidden="false">
@@ -251,10 +253,76 @@
     <section class="banner" aria-label="DMK Methodology">
       <div class="banner__bg" aria-hidden="true"></div>
       <div class="banner__overlay" aria-hidden="true"></div>
-      <div class="banner__content reveal">
-        <p class="banner__text">
-          With DMK's unique approach of <strong>REMOVE</strong>, <strong>REBUILD</strong>, <strong>PROTECT</strong>, and <strong>MAINTAIN</strong>, our therapists are equipped to deliver long-lasting, visible results.
-        </p>
+    </section>
+
+    <!-- ====================== S3.5 DMK INTRO ====================== -->
+    <section class="dmk-intro" aria-labelledby="dmk-intro-heading">
+      <div class="dmk-intro__inner reveal">
+        <h2 class="dmk-intro__title" id="dmk-intro-heading">A New Standard in Skin Health</h2>
+        <h2 class="dmk-intro__subtitle">Powered by the World-Renowned DMK Method</h2>
+        <p class="dmk-intro__body">For over 40 years, DMK (Danné Montague-King) has been transforming skin through a unique approach called Skin Revision.</p>
+        <p class="dmk-intro__body">Unlike traditional facials that focus on the surface, DMK works to improve the way your skin functions—helping restore balance, strengthen the skin barrier and support long-term skin health.</p>
+        <div class="dmk-intro__tags">
+          <div class="dmk-intro__tag-item">
+            <button class="dmk-intro__tag" data-panel="dmk-panel-remove">Remove</button>
+            <div class="dmk-intro__panel" id="dmk-panel-remove">Clear congestion, toxins, dead skin cells, and impurities.</div>
+          </div>
+          <div class="dmk-intro__tag-item">
+            <button class="dmk-intro__tag" data-panel="dmk-panel-rebuild">Rebuild</button>
+            <div class="dmk-intro__panel" id="dmk-panel-rebuild">Strengthen the skin barrier and encourage healthy tissue function.</div>
+          </div>
+          <div class="dmk-intro__tag-item">
+            <button class="dmk-intro__tag" data-panel="dmk-panel-protect">Protect</button>
+            <div class="dmk-intro__panel" id="dmk-panel-protect">Support the skin with targeted ingredients and daily care.</div>
+          </div>
+          <div class="dmk-intro__tag-item">
+            <button class="dmk-intro__tag" data-panel="dmk-panel-maintain">Maintain</button>
+            <div class="dmk-intro__panel" id="dmk-panel-maintain">Create long-term skin health with professional treatments and personalized home care.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== S3.7 BASICS FAQ ====================== -->
+    <section class="basics">
+      <div class="basics__image">
+        <img src="img/banner.jpg" alt="DMK skin therapy close-up" loading="lazy" decoding="async">
+      </div>
+      <div class="basics__content">
+        <h2 class="basics__title">The Basics</h2>
+        <div class="basics__faq">
+
+          <div class="basics__item">
+            <button class="basics__question" aria-expanded="false">
+              What Is DMK Enzyme Therapy?
+              <svg class="basics__chevron" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 8 16 12"/></svg>
+            </button>
+            <div class="basics__answer">
+              <p>DMK Enzyme Therapy is a revolutionary skin treatment that harnesses the power of natural enzymes to restore and rejuvenate the skin. Unlike traditional treatments that rely on harsh chemicals, DMK Enzyme Therapy works with the body's own chemistry to promote healthy, vibrant skin.</p>
+            </div>
+          </div>
+
+          <div class="basics__item">
+            <button class="basics__question" aria-expanded="false">
+              What Does It Treat?
+              <svg class="basics__chevron" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 8 16 12"/></svg>
+            </button>
+            <div class="basics__answer">
+              <p>DMK Enzyme Therapy addresses a wide range of skin concerns including acne, ageing, hyperpigmentation, rosacea, dehydration, and loss of firmness — creating real, lasting change at a cellular level.</p>
+            </div>
+          </div>
+
+          <div class="basics__item">
+            <button class="basics__question" aria-expanded="false">
+              Who Is It For?
+              <svg class="basics__chevron" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 8 16 12"/></svg>
+            </button>
+            <div class="basics__answer">
+              <p>DMK Enzyme Therapy is suitable for all skin types and ages. Whether you're dealing with chronic skin conditions, premature ageing, or simply want to maintain your skin's health — this treatment is designed for you.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
